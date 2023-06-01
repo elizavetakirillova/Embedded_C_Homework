@@ -1,29 +1,16 @@
-/*
- * Вариант System V
- */
+/* Вариант System V */
 
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <unistd.h>
-
 #include <string.h>
-
 #include <sys/ipc.h>
-
 #include <sys/shm.h>
-
 #include <sys/sem.h>
-
 #include <sys/types.h>
-
 #include <sys/time.h>
-
 #include <sys/msg.h>
-
 #include <errno.h>
-
 #include <signal.h>
 
 // основные константы доступа к IPC

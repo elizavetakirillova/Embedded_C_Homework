@@ -1,27 +1,15 @@
-/*
- * Вариант System V
- */
+/* Вариант System V */
 
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <string.h>
-
 #include <signal.h>
-
 #include <unistd.h>
-
 #include <errno.h>
-
 #include <err.h>
-
 #include <sys/types.h>
-
 #include <sys/time.h>
-
 #include <sys/ipc.h>
-
 #include <sys/msg.h>
 
 // определение параметров по умолчанию
