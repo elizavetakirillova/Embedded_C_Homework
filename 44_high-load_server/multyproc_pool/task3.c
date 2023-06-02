@@ -84,14 +84,14 @@ struct service {
 };
 
 struct service_message_data {
-  unsigned short state;
-  char data[MESSAGE_DATA_LENGTH];
+	unsigned short state;
+	char data[MESSAGE_DATA_LENGTH];
 };
 
 // сообщение сервиса
 struct service_message {
-  long type;
-  struct service_message_data data;
+	long type;
+	struct service_message_data data;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -99,37 +99,37 @@ struct service_message {
 ////////////////////////////////////////////////////////////////////////////////
 
 // структура UDP-заголовка
-struct udp_header{
-		unsigned short source_port;  /* порт источника */
-		unsigned short dest_port;    /* порт назначения */
-		unsigned short packet_len;   /* длина UDP-пакета = 8 байт (заголовок) + MESSAGE_FULL_LENGTH (сообщение) */
-		unsigned short check_sum;    /* чек-сумма для проверки целостности пакета = 0 (мы не проверяем)*/
+struct udp_header {
+	unsigned short source_port;  /* порт источника */
+	unsigned short dest_port;    /* порт назначения */
+	unsigned short packet_len;   /* длина UDP-пакета = 8 байт (заголовок) + MESSAGE_FULL_LENGTH (сообщение) */
+	unsigned short check_sum;    /* чек-сумма для проверки целостности пакета = 0 (мы не проверяем)*/
 };
 
 // структура сообщения
 struct message {
-  unsigned short sid; // id привязанного сервиса
-  unsigned short mid; // id сообщения
-  unsigned short type; // тип сообщения (0 запрос подключения, 1 запрос отключения, 2 передача данных)
-  unsigned short state; // состояние сообщения (0cjj,otb подготовлено, 1 получено, 2 отправлено, 3 ошибка)
-  char data[MESSAGE_DATA_LENGTH]; // данные сообщения
+	unsigned short sid; // id привязанного сервиса
+	unsigned short mid; // id сообщения
+	unsigned short type; // тип сообщения (0 запрос подключения, 1 запрос отключения, 2 передача данных)
+	unsigned short state; // состояние сообщения (0cjj,otb подготовлено, 1 получено, 2 отправлено, 3 ошибка)
+	char data[MESSAGE_DATA_LENGTH]; // данные сообщения
 };
 
 // структура UDP-сообщения
 struct udp_message {
 	struct udp_header udph;
-  struct message msg;
+	struct message msg;
 };
 
 // структура сообщения с адресом отправителя
 struct message_ext {
-  struct sockaddr_in addr;
-  struct message msg;
+	struct sockaddr_in addr;
+	struct message msg;
 };
 
 struct message_raw {
-  char buf[IP_PLUS_UDP_SIZE];
-  struct message msg;
+	char buf[IP_PLUS_UDP_SIZE];
+	struct message msg;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

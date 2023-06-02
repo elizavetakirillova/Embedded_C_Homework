@@ -1,16 +1,19 @@
 CC = gcc
-CFLAGS = -g
+CFLAGS = -g -lpthread
 	
 all: build clean
 
 build:
-	$(CC) $(CFLAGS) task3.c -lpthread
+	$(CC) task3.c $(CFLAGS)
 	
 clean:
 	rm -rf *.o
 
 run_sv:
-	./a.out -s
+	sudo ./a.out -s
 
 run_cl:
-	./a.out -c
+	sudo ./a.out -c
+
+# sudo ufw allow 8000
+# sudo ufw allow 8001
