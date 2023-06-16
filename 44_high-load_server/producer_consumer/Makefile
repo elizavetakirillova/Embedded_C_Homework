@@ -4,7 +4,7 @@ CFLAGS = -g -lpthread
 all: build clean
 
 build:
-	$(CC) task3.c $(CFLAGS)
+	$(CC) task4.c $(CFLAGS)
 	
 clean:
 	rm -rf *.o

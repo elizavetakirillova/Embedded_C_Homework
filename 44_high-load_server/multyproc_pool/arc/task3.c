@@ -288,7 +288,7 @@ struct message receive_message_reply(int socket_fd, struct sockaddr_in address) 
 }
 
 // функция предотвращающая считывание не релевантных сообщений из сокета (то есть считвание идет только по сообщениям с подходящими sid и mid)
-struct message receive_message_reply_safe(int so2cket_fd, struct sockaddr_in address, unsigned short sid, unsigned short mid) {
+struct message receive_message_reply_safe(int socket_fd, struct sockaddr_in address, unsigned short sid, unsigned short mid) {
 	struct message message;
 	int attempts = 0;
 	
@@ -656,7 +656,7 @@ void run_client(unsigned int server_ip, unsigned short port_server, unsigned sho
 
       	if (state == MESSAGE_SENT) {
       		printf("[client message data sent]\n");
-+
+
 	      	// получаем ответ от сервиса
 	        struct message message = receive_message_reply_safe(socket_fd, server_address, sid, mid + 1);
 

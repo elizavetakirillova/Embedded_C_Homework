@@ -14,4 +14,4 @@ run_sv:
 	./UDP_header_sv &
 
 run_cl:
-	./UDP_header_cl
+	sudo ./UDP_header_cl
